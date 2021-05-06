@@ -6,15 +6,17 @@ namespace FindMaxNumGenerics
     {
         static void Main(string[] args)
         {
-            MaxOfThreeNumber integer = new MaxOfThreeNumber();
-            int maximumInteger=integer.Max_Of_Three_Integers(23,45,78);
-            Console.WriteLine("Maximum Integer is "+maximumInteger);
+            int largestInteger = MaxOfThreeNumber.To_Find_Max_Using_Generics<int>(6, 7, 4);
+            Console.WriteLine(largestInteger);
 
-            double maximumDecimal = MaxOfThreeNumber.Max_Of_Three_Floats(4.27,5.6,7.89);
-            Console.WriteLine("Maximum decimal number is "+maximumDecimal);
+            string longestString = MaxOfThreeNumber.To_Find_Max_Using_Generics<string>("zebra","lion","tiger");
+            Console.WriteLine(longestString);
 
-            string longestString = MaxOfThreeNumber.Max_Of_Three_String("zebra","tiger","elephant");
-            Console.WriteLine("Longest string Length is  "+longestString);
+            double largestFloat = MaxOfThreeNumber.To_Find_Max_Using_Generics<double>(2.4,5.789,4.56);
+            Console.WriteLine(largestFloat);
+
+
+
         }
     }
 }
