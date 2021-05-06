@@ -12,6 +12,9 @@ namespace FindMaxNumGenerics
 
             double maximumDecimal = MaxOfThreeNumber.Max_Of_Three_Floats(4.27,5.6,7.89);
             Console.WriteLine("Maximum decimal number is "+maximumDecimal);
+
+            string longestString = MaxOfThreeNumber.Max_Of_Three_String("zebra","tiger","elephant");
+            Console.WriteLine("Longest string Length is  "+longestString);
         }
     }
 }
