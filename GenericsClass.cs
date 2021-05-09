@@ -6,36 +6,25 @@ namespace FindMaxNumGenerics
 {
     class GenericsClass<T> where T : IComparable
     {
-        private T first, second, third;
-        public GenericsClass(T first, T second, T third)
+        private T[] value;
+        public GenericsClass(T[] value)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
+            this.value = value;
         }
-        public T To_Find_Max_Using_Generics_Class()
+        public T[] Get_Values_Sorted(T[] value)
         {
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
-            {
-                return first;
-            }
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
-            {
-                return second;
-            }
-            if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0)
-            {
-                return third;
-            }
-            else
-            {
-                throw new Exception("FirstNumber,ThirdNumber,SecondNumber are Equal");
-            }
-
+            Array.Sort(value);
+            return value;
         }
-
-
-
-
+        public T Find_Max_Value(T[] value)
+        {
+            var max_valueAfter_Sorting = Get_Values_Sorted(value);
+            return max_valueAfter_Sorting[value.Length - 1];
+        }
+        public void Print_Max_Value()
+        {
+            var max = Find_Max_Value(this.value);
+            Console.WriteLine("Maximum Values is "+max);
+        }
     }
 }
